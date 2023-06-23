@@ -1,0 +1,65 @@
+#N canvas 271 43 649 620 12;
+#X obj 13 417 cnv 10 120 80 empty empty empty 20 12 0 14 #c6cfe2 #ffe4b7
+0;
+#X obj 15 419 cnv 24 116 76 empty empty empty 20 12 0 14 #272b34 #ffe4b7
+0;
+#X obj 6 251 cnv 10 120 115 empty empty empty 20 12 0 14 #c6cfe2 #ffe4b7
+0;
+#X obj 8 253 cnv 24 116 111 empty empty empty 20 12 0 14 #272b34 #ffe4b7
+0;
+#X obj 6 126 cnv 10 120 115 empty empty empty 20 12 0 14 #c6cfe2 #ffe4b7
+0;
+#X obj 8 128 cnv 24 116 111 empty empty empty 20 12 0 14 #272b34 #ffe4b7
+0;
+#X obj 20 557 dac~;
+#X obj 20 88 phasor~ 50;
+#X obj 20 471 cos~;
+#X obj 71 424 +~ 0.25;
+#X obj 71 470 cos~;
+#X obj 20 510 clip~ -1 1;
+#X obj 98 510 clip~ -1 1;
+#X obj 20 376 wrap~;
+#X floatatom 49 132 8 0 0 1 phase_range - - 0;
+#X msg 49 157 \$1 15;
+#X obj 49 183 line~;
+#X obj 20 214 *~, f 6;
+#X obj 170 52 loadbang;
+#X msg 170 88 1;
+#X floatatom 49 258 8 0 0 1 phase_offset - - 0;
+#X msg 49 283 \$1 15;
+#X obj 49 309 line~;
+#X obj 20 340 +~, f 6;
+#X msg 210 88 0;
+#X text 140 444 draw the circle x = cos(t) \, y = sin(t);
+#X text 137 298 offset phase \, to change the starting position;
+#X text 64 370 modulo 1 on the resulting phase \, to keep it in the
+bounds of 0 to 1;
+#X text 142 190 multiply phase \, to scale how far we go through the
+circle;
+#X text 253 40 Fun Things to Try:;
+#X text 273 61 Multiply phase by a negative number;
+#X text 273 81 Multiply phase by numbers greater than 1;
+#X floatatom 20 54 8 0 0 2 frequency - - 0;
+#X text 273 101 Use oscillators to modulate phase range and offset
+;
+#X connect 7 0 17 0;
+#X connect 8 0 11 0;
+#X connect 9 0 10 0;
+#X connect 10 0 12 0;
+#X connect 11 0 6 0;
+#X connect 12 0 6 1;
+#X connect 13 0 8 0;
+#X connect 13 0 9 0;
+#X connect 14 0 15 0;
+#X connect 15 0 16 0;
+#X connect 16 0 17 1;
+#X connect 17 0 23 0;
+#X connect 18 0 19 0;
+#X connect 18 0 24 0;
+#X connect 19 0 14 0;
+#X connect 20 0 21 0;
+#X connect 21 0 22 0;
+#X connect 22 0 23 1;
+#X connect 23 0 13 0;
+#X connect 24 0 20 0;
+#X connect 32 0 7 0;
