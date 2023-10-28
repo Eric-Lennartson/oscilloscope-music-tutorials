@@ -68,18 +68,17 @@
 		}
 		{OsciVectorPluginLivecoding:
 			"uid":"qPboBA9wMGCZdMGX7oNqDAtXR897VGoG"
-			"enabled":1
+			"enabled":0
 			"expanded":1
 			"title":"Remap based on Phase"
 			"bg":120,120,120,255
-			"weight":0
-			"cut":0.510753
+			"weight":0.166667
+			"cut":0.766129
 			"sourceCode":"#include \"RemappingTree.h\"
 
 #define N 2000
 
 SLIDER(cut, 0..1);
-
 SLIDER(weight, 0..1);
 
 RemappingTree<N> tree;
@@ -98,7 +97,8 @@ void update()
 	updateIdx %= N;
 }
 
-vec3 gen(float t){
+vec3 gen(float t)
+{
 	vec3 v;
 	
 	// comment the below line out, and add the other lines
@@ -115,12 +115,12 @@ vec3 gen(float t){
 		{OsciVectorPluginLivecoding:
 			"uid":"MmXYA3uR9epsrC1uTMNci3l4W6jtgXQo"
 			"enabled":0
-			"expanded":0
+			"expanded":1
 			"title":"Remap based on Location"
 			"bg":120,120,120,255
-			"weight":0.0372551
-			"upper":0.379059
-			"lower":-0.295699
+			"weight":0
+			"upper":0.510779
+			"lower":-0.693548
 			"sourceCode":"#include \"RemappingTree.h\"
 
 // similar to sample rate
@@ -128,7 +128,6 @@ vec3 gen(float t){
 
 SLIDER(lower, -1..0);
 SLIDER(upper, 0..1);
-
 SLIDER(weight, 0..1);
 
 RemappingTree<N> tree;
@@ -153,7 +152,8 @@ void update()
 	updateIdx %= N;
 }
 
-vec3 gen(float t){
+vec3 gen(float t)
+{
 	vec3 v;
 	
 	v = input( tree.remap(t) );
@@ -163,15 +163,15 @@ vec3 gen(float t){
 		}
 		{OsciVectorPluginLivecoding:
 			"uid":"5JgyXpdAAkDOJgSaJShVIspTReNRfJv0"
-			"enabled":0
-			"expanded":0
+			"enabled":1
+			"expanded":1
 			"title":"Moving Square"
 			"bg":120,120,120,255
-			"false_weight":0
-			"sqr_size":0.441792
-			"sqr_y":0.0554895
-			"true_weight":1
-			"sqr_x":0.155914
+			"false_weight":1
+			"sqr_size":0.32168
+			"sqr_y":0.0393605
+			"true_weight":0
+			"sqr_x":-0.258065
 			"sourceCode":"#include \"RemappingTree.h\"
 
 #define N 2000
@@ -179,7 +179,6 @@ vec3 gen(float t){
 SLIDER(sqr_x, -1..1);
 SLIDER(sqr_y, -1..1);
 SLIDER(sqr_size, 0..1);
-
 SLIDER(true_weight, 0..1);
 SLIDER(false_weight, 0..1);
 
@@ -221,7 +220,7 @@ vec3 gen(float t)
 		}
 		{OsciVectorPluginRotate:
 			"uid":"3eHEgucuE2bqh6RcRRZ6kxATsuQfg1ON"
-			"enabled":1
+			"enabled":0
 			"expanded":0
 			"title":"Rotate"
 			"bg":149,82,53,255
@@ -229,9 +228,9 @@ vec3 gen(float t)
 			"LFO":1
 			"+X":5.41058e-06
 			"+Spin":7.33218e-06
-			"Spin":2.92261
-			"Y":-0.430845
-			"X":2.38882
+			"Spin":2.37494
+			"Y":1.05937
+			"X":-1.83069
 		}
 		]
 		"sample_plugins": [
@@ -704,7 +703,7 @@ vec3 gen(float t)
 	"hue":120.274
 	"linesize":2.47368
 	"afterglow":0
-	"size":0
+	"size":2
 	"intensity":0.747368
 	"ignoreMasterVolume":1
 	"analog":1
