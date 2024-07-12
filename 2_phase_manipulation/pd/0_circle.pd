@@ -1,0 +1,23 @@
+#N canvas 431 274 562 350 12;
+#X obj 20 268 dac~;
+#X obj 20 28 phasor~ 50;
+#X obj 20 142 cos~;
+#X obj 71 95 +~ 0.25;
+#X obj 71 141 cos~;
+#X text 199 221 x = cos(t) y = sin(t);
+#X obj 20 221 clip~ -1 1;
+#X obj 98 221 clip~ -1 1;
+#X text 108 142 take phase as input \, and turn it into the related
+position on a cos/sin wave.;
+#X text 131 95 quarter phase offset to give us a sine wave instead
+;
+#X text 107 27 ramp through the phase for our cos~ objects \, 0 ->
+1 \, at frequency of 50Hz. This is the parameter 't' in the parametric
+equations for a circle.;
+#X connect 1 0 2 0;
+#X connect 1 0 3 0;
+#X connect 2 0 6 0;
+#X connect 3 0 4 0;
+#X connect 4 0 7 0;
+#X connect 6 0 0 0;
+#X connect 7 0 0 1;
